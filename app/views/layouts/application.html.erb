@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Wii</title>
+  <%= stylesheet_link_tag :all %>
+  <%= javascript_include_tag :defaults %>
+  <%= csrf_meta_tag %>
+</head>
+<body>
+	<div id="nav-bar">
+		<%= link_to "Liste jeux", games_path %><br/>
+		<%= link_to "Comparer mes jeux", compare_compare_path %>
+	</div>
+
+<%= yield %>
+
+</body>
+</html>

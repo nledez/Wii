@@ -1,0 +1,29 @@
+<h1><%= t(:listing_game) %> <span class="green">Il te manque</span> - <span class="red">Il me manque</span></h1>
+<a href="javascript:void(0);" id="checkAllCheckbox">Tout cocher</a>
+<a href="javascript:void(0);" id="checkGreenCheckbox">Sélectionner tous les jeux verts</a>
+<a href="javascript:void(0);" id="uncheckAllCheckbox">Tout décocher</a>
+<a href="javascript:void(0);" id="showAll">Tout afficher</a>
+<a href="javascript:void(0);" id="hideUnneeded">Cacher inutiles</a>
+<br/>
+<%= form_for :list, :url => games_selections_path do |f| %>
+<% cols=4 %>
+<% i=0 %>
+<table id="GameList">
+  <tr><td colspan="<%= cols %>" class="submit"><%= f.submit %></td></tr> 
+<% @games_summary.each do |game, color| %>
+  <% i+=1 %>
+  <% if i == 0 %>
+  <tr>
+  <% end %>
+  <td class="<%= color %>">
+    <%= check_box_tag "games[]", game %><%= game %><br/>
+    <%= link_to(image_tag("http://wiitdb.com/wiitdb/artwork/cover/EN/#{game}.png"), "http://wiitdb.com/Game/#{game}", html_options = {"target" => "_blank"}) %>
+  </td>
+  <% if i == cols %>
+    <% i = 0 %>
+  </tr>
+  <% end %>
+<% end %>
+  <tr><td colspan="<%= cols %>" class="submit"><%= f.submit %></td></tr> 
+</table>
+<% end %>
