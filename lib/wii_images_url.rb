@@ -1,6 +1,6 @@
 #!/usr/bin/env ruby
 
-require 'URI'
+require 'uri'
 require 'net/http'
 
 module WiiImages
