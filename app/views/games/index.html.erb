@@ -14,8 +14,8 @@
   <td>
     <%= check_box_tag "games[]", game.gameid %><%= game.gameid %><br/>
     <% unless game.img_url.nil? %>
-		<%= link_to(image_tag(game.img_url), "http://wiitdb.com/Game/#{game.gameid}", html_options = {"target" => "_blank"}) %>
-	<% end %>
+        <%= link_to(image_tag(game.img_url), "http://wiitdb.com/Game/#{game.gameid}", html_options = {"target" => "_blank"}) %>
+    <% end %>
   </td>
   <% if i == cols %>
     <% i = 0 %>
