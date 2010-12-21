@@ -1,6 +1,9 @@
 class CompareController < ApplicationController
   require 'import-csv'
   include CsvToArray
+  #load "#{Rails.root}/lib/wii_images_url.rb"
+  require 'wii_images_url'
+  include WiiImages
 
   def compare
   end
