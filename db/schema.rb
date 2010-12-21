@@ -10,12 +10,13 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101108105415) do
+ActiveRecord::Schema.define(:version => 20101221185437) do
 
   create_table "games", :force => true do |t|
     t.string   "gameid"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "img_url"
   end
 
   create_table "languages", :force => true do |t|
