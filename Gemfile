@@ -10,6 +10,7 @@ gem 'jquery-rails'
 
 # Use unicorn as the web server
 # gem 'unicorn'
+gem 'web-app-theme'
 
 # Deploy with Capistrano
 # gem 'capistrano'
@@ -27,5 +28,5 @@ gem 'jquery-rails'
 # put test-only gems in this group so their generators
 # and rake tasks are available in development mode:
 group :development, :test do
-  gem 'ruby-debug'
+  gem 'ruby-debug19'
 end
