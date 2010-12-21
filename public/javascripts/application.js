@@ -2,6 +2,9 @@ $(function() {
 	$("#checkGreenCheckbox").click(function(){
 		check_green_checkbox();
 	});
+	$("#checkRedCheckbox").click(function(){
+		check_red_checkbox();
+	});
 	$("#checkAllCheckbox").click(function(){
 		check_all_checkbox();
 	});
@@ -23,6 +26,12 @@ $(document).ready(function() {
 
 function check_green_checkbox() {
 	$("table tr td.green input").each(function(index) {
+		this.checked = true;
+	});
+}
+
+function check_red_checkbox() {
+	$("table tr td.red input").each(function(index) {
 		this.checked = true;
 	});
 }

@@ -14,13 +14,13 @@ class GamesController < ApplicationController
       format.text  { render :text => @games.map { |g| "#{g.gameid}\n" } }
     end
   end
-
+  
   def selections
   end
   
   def check
     @games = Game.where(:img_url => nil)
-
+    
     @games.each { |game|
       puts "Check #{game.gameid}"
       game.img_url = check_game_image(game.gameid)
@@ -33,5 +33,4 @@ class GamesController < ApplicationController
       format.text  { render :text => @games.map { |g| "#{g.gameid}\n" } }
     end
   end
-
 end

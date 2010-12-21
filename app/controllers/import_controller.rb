@@ -1,7 +1,7 @@
 class ImportController < ApplicationController
   def import
   end
-
+  
   def upload
     @games = []
     data = []
@@ -10,7 +10,7 @@ class ImportController < ApplicationController
       (gameid, id) = line.split(/:/)
       gameid.strip!
       @games.push gameid
-      @game = Game.new(:gameid => gameid)
+      @game = Game.new(:gameid => gameid, :user_id => 1)
       @game.save
     }
   end

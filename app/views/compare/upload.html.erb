@@ -2,6 +2,7 @@
 <a href="javascript:void(0);" id="checkAllCheckbox">Tout cocher</a>
 <a href="javascript:void(0);" id="checkGreenCheckbox">Sélectionner tous les jeux verts</a>
 <a href="javascript:void(0);" id="uncheckAllCheckbox">Tout décocher</a>
+<a href="javascript:void(0);" id="checkRedCheckbox">Sélectionner tous les jeux rouges</a>
 <a href="javascript:void(0);" id="showAll">Tout afficher</a>
 <a href="javascript:void(0);" id="hideUnneeded">Cacher inutiles</a>
 <br/>
@@ -10,12 +11,12 @@
 <% i=0 %>
 <table id="GameList">
   <tr><td colspan="<%= cols %>" class="submit"><%= f.submit %></td></tr> 
-<% @games_summary.each do |game, color| %>
+<% @games_summary.each do |game| %>
   <% i+=1 %>
   <% if i == 0 %>
   <tr>
   <% end %>
-  <td class="<%= color %>">
+  <td class="<%= game.color %>">
     <%= check_box_tag "games[]", game.gameid %><%= game.gameid %><br/>
     <% unless game.img_url.nil? %>
         <%= link_to(image_tag(game.img_url), "http://wiitdb.com/Game/#{game.gameid}", html_options = {"target" => "_blank"}) %>
